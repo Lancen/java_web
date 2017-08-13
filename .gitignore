@@ -1,2 +1,4 @@
 /build/
 .classpath
+/bin/
+.settings/org.eclipse.wst.common.component
