@@ -36,7 +36,7 @@ public class AdminUserController extends HttpServlet {
 				"<th>Header 名称</th><th>Header 值</th>\n"+
 				"</tr>\n");
 
-			Enumeration headerNames = request.getHeaderNames();
+			Enumeration<String> headerNames = request.getHeaderNames();
 
 			while(headerNames.hasMoreElements()) {
 				String paramName = (String)headerNames.nextElement();
