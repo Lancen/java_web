@@ -21,4 +21,6 @@ public @interface Column {
 	public String type() default "VARCHAR(80)";// 字段类型，记得用双引号，单引号只能用于单字节
 
 	public boolean defaultNull() default true;// 默认null
+	
+	public boolean autoIncrement() default false;// 是否自增
 }

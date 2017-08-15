@@ -1,27 +1,37 @@
 package com.lance.bean;
 
+import com.lance.annotation.Column;
 import com.lance.annotation.Table;
 
 @Table(tableName = "Member")
 public class Member {
 
-	private Integer id; // 主键
+	@Column(field = "id", type = "INT(10)", primaryKey = true, defaultNull = false, autoIncrement = true)
+	private Integer	id;			  // 主键
 
-	private String username; // 用户名
+	@Column(field = "username", type = "CHAR(20)")
+	private String	username;	  // 用户名
 
-	private String password; // 加密后的密码，加密方法md5(md5(pwd)+salt)
+	@Column(field = "password", type = "CHAR(32)")
+	private String	password;	  // 加密后的密码，加密方法md5(md5(password)+salt)
 
-	private String salt; // 加密盐
+	@Column(field = "salt", type = "CHAR(4)")
+	private String	salt;		  // 加密盐
 
-	private Integer mobilephone; // 手机号码
-	
-	private String email ; // 邮件
-	
-	private String avatar; // 头像
-	
-	private Integer registertime; // 注册时间
+	@Column(field = "mobilephone", type = "CHAR(13)")
+	private Integer	mobilephone;  // 手机号码
 
-	private Integer lasttime; // 最后登录时间
+	@Column(field = "email", type = "CHAR(50)")
+	private String	email;		  // 邮件
+
+	@Column(field = "avatar", type = "CHAR(50)")
+	private String	avatar;		  // 头像
+
+	@Column(field = "registertime", type = "INT(10)")
+	private Integer	registertime; // 注册时间
+
+	@Column(field = "lasttime", type = "INT(10)")
+	private Integer	lasttime;	  // 最后登录时间
 
 	public Integer getId() {
 		return id;
