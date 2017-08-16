@@ -7,12 +7,12 @@ import com.lance.annotation.Table;
 
 public class TableUtils {
 
-	public static String CreateTableSql(Class<?> clazz) {
+	public static String getCreateTableSql(Class<?> clazz) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("CREATE TABLE ");
 
 		// 获取表名，通过传参的类，获取类的注解的值
-		Table table = (Table) clazz.getAnnotation(Table.class);
+		Table table = clazz.getAnnotation(Table.class);
 		String tableName = table.tableName();
 		sql.append(tableName).append("(\n");
 
@@ -39,7 +39,7 @@ public class TableUtils {
 					primaryKey = "PRIMARY KEY (" + field + ")";
 				}
 				if(column.autoIncrement()){
-					sql.append("AUTO_INCREMENT");
+					sql.append(" AUTO_INCREMENT ");
 				}
 				sql.append(" NOT NULL,\n");
 			}

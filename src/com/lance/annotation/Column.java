@@ -5,6 +5,8 @@ package com.lance.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 /**
  * @author Administrator
@@ -12,6 +14,7 @@ import java.lang.annotation.Target;
  */
 @Documented
 @Target(ElementType.FIELD)  //注解的目标
+@Retention(RetentionPolicy.RUNTIME)
 public @interface Column {
 
 	public String field();// 字段名
